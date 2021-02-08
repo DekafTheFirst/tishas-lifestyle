@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags%}
+
+{% block content %}
+<style>
+    .container-post-detail{
+        padding: 0;
+        
+    }
+
+    img,video {
+        display: block;
+        width: 100%;
+        margin: 0 auto 5px ;
+    }
+
+    
+    .col-md-12{
+            padding:0px;
+        }
+    
+    .card {
+        border: none;
+    }
+
+    .jumbotron{
+        margin: 0
+    }
+
+    p {
+        margin: 0;
+    }
+
+</style>
+    <div class="container container-post-detail">
+        <div class="jumbotron jumbotron-fluid p-2">
+            
+            <h1 class="text-dark text-center">{{ post.title }}</h1>
+            
+        </div>
+        <div class="row">
+            <div class="col-md-12 mb-3 center">
+                <div class="card">
+                    <div class="card-body">
+                        {% block detail %}
+                        <p class="text-dark">{{ post.author }} | {{ post.created_on }}</p>
+                        <p>{{post.content | safe}}</p>
+                        {% endblock detail %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}
+
+

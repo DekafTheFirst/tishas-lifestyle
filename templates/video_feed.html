@@ -1,0 +1,25 @@
+{% extends 'pic_feed.html'%}
+{% block media %}
+{% for post in video_feeds %}
+<div class="col-md-10 col-sm-12 mb-3 feed_col">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card feed_card mt-3 ">
+                <div class="card-header p-2 px-3">
+                    <p class='m-0'>{{ post.author }} {{ post.created_on }}</p>
+                </div>
+                <div class="card-body p-0">
+                    <video style = "width:100%; margin:0px" controls>
+                        <source src="{{ post.video.url }}" type="video/mp4">
+                    </video>                         
+                </div>
+           </div>
+        </div>
+        <div class="col-md-6 p-1">
+            <p class="feed-description"> {{post.description|slice:":400"}}<a href="{%url 'video_feed_detail' post.slug %}"> read more....</a></p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock%}
+

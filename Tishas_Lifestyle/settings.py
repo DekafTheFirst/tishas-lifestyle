@@ -29,7 +29,7 @@ SECRET_KEY = 'm2cl(hp&9gs=e=kjv0w1!y6mdg29$t4r3-qzrm*)0p^q=6-#p#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tishaslifestyle.pythonanywhere.com', 'localhost']
 
 
 # Application definition

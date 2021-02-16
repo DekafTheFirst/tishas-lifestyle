@@ -1,13 +1,12 @@
 {% extends 'blog/post_detail.html' %}
-{% block detail %}
 
 {% block feed_title %}
 <h1 class="text-dark text-center">{{ feed.title }}</h1>
 {% endblock feed_title %}
 
-{% block media %}
-<img src="{{ feed.image.url }}" alt="">
-{% endblock %}
-<p>{{ feed.description | safe}}</p>
-                    
+{% block detail %}
+    {% block media %}
+    <img src="{{ feed.image.url }}" alt="">
+    {% endblock media%}
+    <p>{{ feed.description | safe}}</p>
 {% endblock detail %}

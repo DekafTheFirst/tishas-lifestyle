@@ -32,25 +32,27 @@
     }
 
 </style>
-    <div class="container container-post-detail">
-        <div class="jumbotron jumbotron-fluid p-2">
-            
-            <h1 class="text-dark text-center">{{ post.title }}</h1>
-            
-        </div>
-        <div class="row">
-            <div class="col-md-12 mb-3 center">
-                <div class="card">
-                    <div class="card-body">
-                        {% block detail %}
-                        <p class="text-dark">{{ post.author }} | {{ post.created_on }}</p>
-                        <p>{{post.content | safe}}</p>
-                        {% endblock detail %}
-                    </div>
+
+<div class="jumbotron jumbotron-fluid p-2">
+    {% block feed_title %}       
+    <h1 class="text-dark text-center">{{ post.title }}</h1>
+    {% endblock feed_title %}
+</div>
+
+<div class="container container-post-detail">
+    <div class="row">
+        <div class="col-md-12 mb-3 center">
+            <div class="card">
+                <div class="card-body">
+                    {% block detail %}
+                    <p class="text-dark">{{ post.author }} | {{ post.created_on }}</p>
+                    <p>{{post.content | safe}}</p>
+                    {% endblock detail %}
                 </div>
             </div>
         </div>
     </div>
+</div>
     
 {% endblock %}
 
